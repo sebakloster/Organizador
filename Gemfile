@@ -24,8 +24,9 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'hamlit' #Gema para poder usar HAML en vez de erb.
 gem 'simple_form' #Simplifica la creacion de los formularios
-gem 'annotate' #Me ayuda a poner el schema comentado en los modelos
-gem 'rails-i18n'# Me ayuda con la internalizacion
+gem 'annotate' #Nos ayuda a poner el schema comentado en los modelos
+gem 'rails-i18n'# Nos ayuda con la internalizacion
+gem 'devise' #Nos ayuda con la gestion de users
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
