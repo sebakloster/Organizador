@@ -28,6 +28,7 @@ gem 'annotate' #Nos ayuda a poner el schema comentado en los modelos
 gem 'rails-i18n'# Nos ayuda con la internalizacion
 gem 'devise' #Nos ayuda con la gestion de users
 gem 'cocoon' #Nos ayuda a crear formularios anidados
+gem 'cancancan' #Nos ayuda a gestionar los permisos segun el tipo de partcicipant en una Task
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -47,8 +48,8 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  # gem 'spring'
+  # gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'hamlit-rails' #Gema para poder usar HAML en vez de erb. 
 end
 

@@ -6,4 +6,9 @@ class ApplicationController < ActionController::Base
     def set_locale
         I18n.locale = 'es'
     end
+
+    rescue_from CanCan::AccessDenied do |exception|
+        redirect_to root_path
+    end
+
 end
