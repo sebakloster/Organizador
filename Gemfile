@@ -27,7 +27,7 @@ gem 'simple_form' #Simplifica la creacion de los formularios
 gem 'annotate' #Nos ayuda a poner el schema comentado en los modelos
 gem 'rails-i18n'# Nos ayuda con la internalizacion
 gem 'devise' #Nos ayuda con la gestion de users
-gem 'cocoon'
+gem 'cocoon' #Nos ayuda a crear formularios anidados
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

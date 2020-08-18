@@ -21,6 +21,8 @@ class Task < ApplicationRecord
   validates :name, :description, presence: true
   validates :name, uniqueness: { case_sensitive: false }
   validate  :due_date_validator
+
+  accepts_nested_attributes_for :participating_users, allow_destroy: true
   
   def due_date_validator
    return if due_date.blank?
