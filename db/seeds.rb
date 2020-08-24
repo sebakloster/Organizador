@@ -4,9 +4,9 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   Character.create(name: 'Luke', movie: movies.first)  'andres', 'natalia', 'camilo', 'rusbel', 'johan'
 
-['juan', 'andrea', 'leon', 'andres', 'natalia', 'camilo', 'rusbel', 'johan'].each do |name|
+['juan', 'andrea', 'leon'].each do |name|
     User.create email: "#{name}@gmail.com", password: 'asdasdasd'
 end
 puts 'Users has been created'
@@ -18,8 +18,8 @@ puts 'Users has been created'
     end
     puts 'Categories has been created'
     
-    owner = User.find_by(email: 'ej@gmail.com')
-    
+    owner = User.find_by(email: 'leon@gmail.com')
+     
 
     [
     

@@ -1,5 +1,9 @@
-%h1= t('tasks.new_task')
 
-= render 'form'
+.tasks.new-page
+  .card
+    .card-body
+      %h2 Nueva Tarea
 
-= link_to t('common.back'), tasks_path
+      = render 'form'
+
+      = link_to t('common.back'), tasks_path, class: 'btn-interaction'

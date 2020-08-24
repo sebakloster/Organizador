@@ -29,7 +29,7 @@ gem 'rails-i18n'# Nos ayuda con la internalizacion
 gem 'devise' #Nos ayuda con la gestion de users
 gem 'cocoon' #Nos ayuda a crear formularios anidados
 gem 'cancancan' #Nos ayuda a gestionar los permisos segun el tipo de partcicipant en una Task
-
+gem 'font-awesome-sass', '~> 5.12.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

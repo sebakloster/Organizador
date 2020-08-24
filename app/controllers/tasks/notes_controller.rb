@@ -15,4 +15,4 @@ class Tasks::NotesController < ApplicationController
     def set_task
         @task = Task.find(params[:task_id])
     end
-end
+end 
