@@ -1,30 +1,28 @@
 class TasksController < ApplicationController
   load_and_authorize_resource
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: %i[show edit update destroy]
 
   # GET /tasks
   # GET /tasks.json
   def index
     @tasks = Task.joins(:participants).where(
       'owner_id = ? OR participants.user_id = ? ',
-      current_user.id, 
+      current_user.id,
       current_user.id
     ).group(:id)
   end
 
   # GET /tasks/1
   # GET /tasks/1.json
-  def show
-  end
+  def show; end
 
   # GET /tasks/new
   def new
-    @task = Task.new 
+    @task = Task.new
   end
 
   # GET /tasks/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /tasks
   # POST /tasks.json
@@ -67,13 +65,14 @@ class TasksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_task
-      @task = Task.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def task_params
-      params.require(:task).permit(:name, :description, :due_date, :category_id, participating_users_attributes: [:user_id, :role, :id, :_destroy])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_task
+    @task = Task.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def task_params
+    params.require(:task).permit(:name, :description, :due_date, :category_id, participating_users_attributes: %i[user_id role id _destroy])
+  end
 end
