@@ -6,7 +6,7 @@ ruby '2.7.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use postgresql as the database for Active Record
-gem 'pg', '>= 0.18', '< 2.0'
+# gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -21,8 +21,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'mongoid', github: 'mongodb/mongoid', branch: 'master'
 
-gem 'annotate' # Nos ayuda a poner el schema comentado en los modelos
+# gem 'annotate' # Nos ayuda a poner el schema comentado en los modelos
 gem 'cancancan' # Nos ayuda a gestionar los permisos segun el tipo de partcicipant en una Task
 gem 'cocoon' # Nos ayuda a crear formularios anidados
 gem 'devise' # Nos ayuda con la gestion de users
