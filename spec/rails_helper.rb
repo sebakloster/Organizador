@@ -37,8 +37,9 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
 
   config.include FactoryBot::Syntax::Methods
-  config.include Warden::Test::Helper
+  config.include Warden::Test::Helpers
   config.include Devise::Test::ControllerHelpers, type: 'controller'
+  config.include Mongoid::Matchers, type: :model
 
   config.before(:suite) do
     DatabaseCleaner.orm = 'mongoid'
