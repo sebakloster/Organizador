@@ -66,4 +66,5 @@ group :test do
   gem 'database_cleaner'
   gem 'faker'
   gem 'mongoid-rspec'
+  gem 'rails-controller-testing'
 end
