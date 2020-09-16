@@ -67,4 +67,5 @@ group :test do
   gem 'faker'
   gem 'mongoid-rspec'
   gem 'rails-controller-testing'
+  gem 'selenium-webdriver'
 end
