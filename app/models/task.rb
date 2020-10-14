@@ -15,11 +15,13 @@
 class Task
   include Mongoid::Document
   include Mongoid::Timestamps
-
+  include AASM
   field :name, type: String
   field :description, type: String
   field :due_date, type: Date
   field :code, type: String
+  field :status, type: String
+  field :transitions, type: Array, default: []
 
   belongs_to :category
   belongs_to :owner, class_name: 'User'
@@ -37,6 +39,31 @@ class Task
   after_create :send_email
 
   accepts_nested_attributes_for :participating_users, allow_destroy: true
+
+  aasm column: :status do
+    state :pending, initial: true
+    state :in_process, :finished
+    after_all_transitions :audit_status_change
+    event :start do
+      transitions from: :pending, to: :in_process
+    end
+
+    event :finish do
+      transitions from: :in_process, to: :finished
+    end
+  end
+
+  def audit_status_change
+    puts "changing from #{aasm.from_state} to #{aasm.to_state} (event: #{aasm.current_event})"
+    set transitions: transitions.push(
+      {
+        from_state: aasm.from_state,
+        to_state: aasm.to_state,
+        current_event: aasm.current_event,
+        timestamps: Time.zone.now
+      }
+    )
+  end
 
   def participants
     participating_users.includes(:user).map(&:user)

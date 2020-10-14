@@ -33,6 +33,7 @@ gem 'rails-i18n' # Nos ayuda con la internalizacion
 gem 'simple_form' # Simplifica la creacion de los formularios
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem 'aasm'
 gem 'sucker_punch'
 
 # Reduces boot times through caching; required in config/boot.rb
